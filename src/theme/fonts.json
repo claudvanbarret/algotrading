@@ -1,0 +1,14 @@
+{
+  "family": "-system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;",
+  "mainFamily": "-system-ui",
+  "lineHeight": "2.4rem",
+  "size": "1.4rem",
+  "weight": {
+    "thin": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 800
+  }
+}
