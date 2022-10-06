@@ -1,10 +1,12 @@
 import ResetStyle from '../theme/Reset.style';
 
+import Router from '../router';
+
 function App() {
   return (
     <>
       <ResetStyle />
-      <h1>Algotrading</h1>
+      <Router />
     </>
   );
 }
