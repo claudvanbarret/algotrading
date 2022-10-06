@@ -6,5 +6,5 @@ import RequestService from './RequestService';
  * Fetch and returns spread configurations
  */
 export const fetchSpreadConfigurations = () => {
-  return RequestService.get<SpreadConfiguration>(Endpoints.SPREADS);
+  return RequestService.get<SpreadConfiguration[]>(Endpoints.SPREADS);
 };
