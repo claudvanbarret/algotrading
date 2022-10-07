@@ -8,9 +8,14 @@ export enum SymbolEnum {
   ETH = 'ETH',
 }
 
+export enum SpreadType {
+  WORKING_HOURS = 1,
+  NIGHT_SHIFT,
+}
+
 export interface SpreadConfiguration {
   id: number;
-  spreadTypeId: number;
+  spreadTypeId: SpreadType;
   accountId: number;
   symbol: SymbolEnum;
   side: Side;
