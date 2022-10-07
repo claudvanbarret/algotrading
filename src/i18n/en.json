@@ -1,0 +1,9 @@
+{
+    "algotrading": "Algotrading",
+    "account_id": "AccountId",
+    "symbol": "Symbol",
+    "side": "Side",
+    "notional_from": "Notional From",
+    "notional_to": "Notional To",
+    "percent": "Percent"
+}
