@@ -4,24 +4,30 @@ import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
 import { fetchSpreadConfigurations, updateSpreadConfiguration } from '../services/spreadService';
 
 const useSpreads = () => {
-  const [data, setData] = useState<SpreadConfiguration[]>([]);
+  const [spreadConfigurations, setSpreadConfigurations] = useState<SpreadConfiguration[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      if (data.length) return;
+      if (spreadConfigurations.length) return;
 
       const response = await fetchSpreadConfigurations();
-      setData(response.data);
+      setSpreadConfigurations(response.data);
     };
 
     fetchData().catch(console.error);
   }, []);
 
-  const workingHours = useMemo(() => data.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS), [data]);
-  const nightShift = useMemo(() => data.filter((spread) => spread.spreadTypeId === SpreadType.NIGHT_SHIFT), [data]);
+  const workingHours = useMemo(
+    () => spreadConfigurations.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS),
+    [spreadConfigurations]
+  );
+  const nightShift = useMemo(
+    () => spreadConfigurations.filter((spread) => spread.spreadTypeId === SpreadType.NIGHT_SHIFT),
+    [spreadConfigurations]
+  );
 
-  const updateData = useCallback((rowIndex: number, columnId: string, value: unknown) => {
-    setData((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
+  const updateSpreadConfigurations = useCallback((rowIndex: number, columnId: string, value: unknown) => {
+    setSpreadConfigurations((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
   }, []);
 
   const updateSpreadConfigurationById = useCallback(async (spreadConfiguration: SpreadConfiguration) => {
@@ -31,10 +37,10 @@ const useSpreads = () => {
   }, []);
 
   return {
-    data,
+    spreadConfigurations,
     workingHours,
     nightShift,
-    updateData,
+    updateSpreadConfigurations,
     updateSpreadConfigurationById,
   };
 };

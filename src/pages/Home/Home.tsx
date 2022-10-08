@@ -8,7 +8,7 @@ import useSpreads from '../../hooks/useSpreads';
 import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
 
 const Home = () => {
-  const { workingHours, updateData, updateSpreadConfigurationById } = useSpreads();
+  const { workingHours, updateSpreadConfigurations, updateSpreadConfigurationById } = useSpreads();
   const { t } = useTranslation();
 
   const handleEdit = useCallback(
@@ -43,19 +43,19 @@ const Home = () => {
         Header: t('notional_from'),
         accessor: SpreadConfigurationAcessor.NOTIONAL_FROM,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateData} />,
+        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
       },
       {
         Header: t('notional_to'),
         accessor: SpreadConfigurationAcessor.NOTIONAL_TO,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateData} />,
+        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
       },
       {
         Header: t('percent'),
         accessor: SpreadConfigurationAcessor.SPREAD_PERCENTIL,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateData} />,
+        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
       },
       {
         Header: t('edit'),
