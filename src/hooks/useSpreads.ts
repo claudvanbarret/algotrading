@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+
 import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
-import { fetchSpreadConfigurations } from '../services/spreadService';
+import { fetchSpreadConfigurations, updateSpreadConfiguration } from '../services/spreadService';
 
 const useSpreads = () => {
   const [data, setData] = useState<SpreadConfiguration[]>([]);
@@ -23,11 +24,18 @@ const useSpreads = () => {
     setData((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
   }, []);
 
+  const updateSpreadConfigurationById = useCallback(async (spreadConfiguration: SpreadConfiguration) => {
+    const response = await updateSpreadConfiguration(spreadConfiguration);
+
+    return response.data;
+  }, []);
+
   return {
     data,
     workingHours,
     nightShift,
     updateData,
+    updateSpreadConfigurationById,
   };
 };
 

@@ -5,5 +5,6 @@
     "side": "Side",
     "notional_from": "Notional From",
     "notional_to": "Notional To",
-    "percent": "Percent"
+    "percent": "Percent",
+    "edit": "Edit"
 }

@@ -8,3 +8,11 @@ import RequestService from './RequestService';
 export const fetchSpreadConfigurations = () => {
   return RequestService.get<SpreadConfiguration[]>(Endpoints.SPREADS);
 };
+
+/**
+ * Update spread configurations
+ */
+export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfiguration) => {
+  const endpoint = `${Endpoints.SPREADS}/${spreadConfiguration.id}`;
+  return RequestService.put<SpreadConfiguration[]>(endpoint, spreadConfiguration);
+};

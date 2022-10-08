@@ -1,424 +1,424 @@
 {
-    "spreads": [
-        {
-            "id": 79,
-            "spreadTypeId": 1,
-            "accountId": 1,
-            "symbol": "ETH",
-            "side": null,
-            "notionalFrom": 0.0,
-            "notionalTo": 200.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 38,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 0.7
-        },
-        {
-            "id": 40,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 1.4
-        },
-        {
-            "id": 42,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 1.45
-        },
-        {
-            "id": 44,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 1.5
-        },
-        {
-            "id": 47,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 1.5
-        },
-        {
-            "id": 39,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 41,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": -0.25
-        },
-        {
-            "id": 43,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 46,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 48,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 49,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 1.25
-        },
-        {
-            "id": 51,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 1.35
-        },
-        {
-            "id": 53,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 1.4
-        },
-        {
-            "id": 55,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 1.45
-        },
-        {
-            "id": 57,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 1.5
-        },
-        {
-            "id": 50,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": -0.35
-        },
-        {
-            "id": 52,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": -0.25
-        },
-        {
-            "id": 54,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 56,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 58,
-            "spreadTypeId": 1,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 80,
-            "spreadTypeId": 2,
-            "accountId": 1,
-            "symbol": "ETH",
-            "side": null,
-            "notionalFrom": 0.0,
-            "notionalTo": 200.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 59,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 61,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 63,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 65,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 67,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "BUY",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 60,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 62,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 64,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 66,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 68,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "BTC",
-            "side": "SELL",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 69,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 71,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 73,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 75,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 77,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "BUY",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 3.0
-        },
-        {
-            "id": 70,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 50.0,
-            "notionalTo": 20000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 72,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 20000.01,
-            "notionalTo": 100000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 74,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 100000.01,
-            "notionalTo": 1000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 76,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 1000000.01,
-            "notionalTo": 2000000.0,
-            "spreadPercentil": 0.0
-        },
-        {
-            "id": 78,
-            "spreadTypeId": 2,
-            "accountId": 21,
-            "symbol": "ETH",
-            "side": "SELL",
-            "notionalFrom": 2000000.01,
-            "notionalTo": 3000000.0,
-            "spreadPercentil": 0.0
-        }
-    ]
+  "spreads": [
+    {
+      "id": 79,
+      "spreadTypeId": 1,
+      "accountId": 1,
+      "symbol": "ETH",
+      "side": null,
+      "notionalFrom": 0.0,
+      "notionalTo": 200.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 38,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 0.7
+    },
+    {
+      "id": 40,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 1.4
+    },
+    {
+      "id": 42,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 1.45
+    },
+    {
+      "id": 44,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 1.5
+    },
+    {
+      "id": 47,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 1.5
+    },
+    {
+      "id": 39,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 41,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": -0.25
+    },
+    {
+      "id": 43,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 46,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 48,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 49,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 1.25
+    },
+    {
+      "id": 51,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 1.35
+    },
+    {
+      "id": 53,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 1.4
+    },
+    {
+      "id": 55,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 1.45
+    },
+    {
+      "id": 57,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 1.5
+    },
+    {
+      "id": 50,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": -0.35
+    },
+    {
+      "id": 52,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": -0.25
+    },
+    {
+      "id": 54,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 56,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 58,
+      "spreadTypeId": 1,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 80,
+      "spreadTypeId": 2,
+      "accountId": 1,
+      "symbol": "ETH",
+      "side": null,
+      "notionalFrom": 0.0,
+      "notionalTo": 200.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 59,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 61,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 63,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 65,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 67,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "BUY",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 60,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 62,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 64,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 66,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 68,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "BTC",
+      "side": "SELL",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 69,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 71,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 73,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 75,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 77,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "BUY",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 3.0
+    },
+    {
+      "id": 70,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 50.0,
+      "notionalTo": 20000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 72,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 20000.01,
+      "notionalTo": 100000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 74,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 100000.01,
+      "notionalTo": 1000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 76,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 1000000.01,
+      "notionalTo": 2000000.0,
+      "spreadPercentil": 0.0
+    },
+    {
+      "id": 78,
+      "spreadTypeId": 2,
+      "accountId": 21,
+      "symbol": "ETH",
+      "side": "SELL",
+      "notionalFrom": 2000000.01,
+      "notionalTo": 3000000.0,
+      "spreadPercentil": 0.0
+    }
+  ]
 }
