@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
 import { fetchSpreadConfigurations } from '../services/spreadService';
 
@@ -19,10 +19,15 @@ const useSpreads = () => {
   const workingHours = useMemo(() => data.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS), [data]);
   const nightShift = useMemo(() => data.filter((spread) => spread.spreadTypeId === SpreadType.NIGHT_SHIFT), [data]);
 
+  const updateData = useCallback((rowIndex: number, columnId: string, value: unknown) => {
+    setData((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
+  }, []);
+
   return {
     data,
     workingHours,
     nightShift,
+    updateData,
   };
 };
 
