@@ -6,6 +6,7 @@ import { NumberCell } from '../../components/atoms/NumberCell';
 import { Table } from '../../components/molecules/Table';
 import useSpreads from '../../hooks/useSpreads';
 import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
+import * as S from './Home.styles';
 
 const Home = () => {
   const { workingHours, updateSpreadConfigurations, updateSpreadConfigurationById, deleteSpreadConfigurationById } = useSpreads();
@@ -81,10 +82,10 @@ const Home = () => {
   );
 
   return (
-    <>
-      <h1>{t('algotrading')}</h1>
-      <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={300} />
-    </>
+    <S.Container>
+      <h1>{t('spread_configuration')}</h1>
+      <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={300} title={t('working_hours')} />
+    </S.Container>
   );
 };
 

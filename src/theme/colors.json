@@ -1,5 +1,6 @@
 {
   "fill": "#FFFFFF",
-  "fillBlack": "#171c1e",
+  "fillBlack": "#000000",
+  "fillBlackSecondary": "#171c1e",
   "fillGrey": "#515960"
 }

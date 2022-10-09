@@ -1,38 +1,31 @@
 import styled, { css } from 'styled-components';
 import Theme from '../../../theme/Theme';
 
-const { colors } = Theme;
+const { colors, spaces, fonts } = Theme;
 
 interface TableStyleProps {
   height?: number;
 }
 
+export const Container = styled.div`
+  width: fit-content;
+`;
+
+export const Title = styled.h3`
+  padding: ${spaces.s};
+  background-color: ${colors.fillGrey};
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  text-transform: uppercase;
+  font-weight: ${fonts.weight.medium};
+`;
+
 export const Table = styled.table<TableStyleProps>`
   display: inline-block;
   border-spacing: 0;
   border: 1px solid ${colors.fillGrey};
-  overflow: scroll;
-  height: ${({ height }) => height ?? '100%'};
-
-  .tr {
-    :last-child {
-      .td {
-        border-bottom: 0;
-      }
-    }
-  }
-
-  .th,
-  .td {
-    margin: 0;
-    padding: 0.5rem;
-    border-bottom: 1px solid ${colors.fillGrey};
-    border-right: 1px solid ${colors.fillGrey};
-
-    :last-child {
-      border-right: 0;
-    }
-  }
+  overflow-y: auto;
+  height: ${({ height }) => `${height}px` ?? '100%'};
 `;
 
 export const Tr = styled.td`
@@ -45,16 +38,17 @@ export const Tr = styled.td`
 
 const Column = css`
   margin: 0;
-  padding: 0.5rem;
+  padding: ${spaces.xs};
   border-bottom: 1px solid ${colors.fillGrey};
   border-right: 1px solid ${colors.fillGrey};
+  text-align: left;
 
   :last-child {
     border-right: 0;
   }
 `;
 
-export const Th = styled.td`
+export const Th = styled.th`
   ${Column}
 `;
 

@@ -1,5 +1,7 @@
 {
     "algotrading": "Algotrading",
+    "spread_configuration": "Spread Configuration",
+    "working_hours": "Working Hours",
     "account_id": "AccountId",
     "symbol": "Symbol",
     "side": "Side",

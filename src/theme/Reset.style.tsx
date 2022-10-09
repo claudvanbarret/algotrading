@@ -13,7 +13,7 @@ const ResetStyles = createGlobalStyle`
     font-size: 62.5%;
   }
   body {
-    background-color: ${Theme.colors.fillBlack};
+    background-color: ${Theme.colors.fillBlackSecondary};
     color: ${Theme.colors.fill};
     font-size: ${Theme.fonts.size};
     font-family: ${Theme.fonts.family};
