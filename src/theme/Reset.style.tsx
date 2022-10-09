@@ -13,6 +13,8 @@ const ResetStyles = createGlobalStyle`
     font-size: 62.5%;
   }
   body {
+    display: flex;
+    justify-content: center;
     background-color: ${Theme.colors.fillBlackSecondary};
     color: ${Theme.colors.fill};
     font-size: ${Theme.fonts.size};
