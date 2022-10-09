@@ -31,10 +31,10 @@ export const Table = styled.table<TableStyleProps>`
 
   tbody {
     tr {
-      background-color: ${colors.fillGreySecondary};
+      background-color: ${colors.fillGreyTertiary};
 
       :nth-child(2n) {
-        background-color: ${colors.fillGreyTertiary};
+        background-color: ${colors.fillGreyQuartenary};
       }
     }
   }

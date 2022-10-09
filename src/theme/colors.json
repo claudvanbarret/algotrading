@@ -3,6 +3,8 @@
   "fillBlack": "#000000",
   "fillBlackSecondary": "#171c1e",
   "fillGrey": "#515960",
-  "fillGreySecondary": "#272727",
-  "fillGreyTertiary": "#191919"
+  "fillGreySecondary": "#484e53",
+  "fillGreyTertiary": "#272727",
+  "fillGreyQuartenary": "#191919",
+  "fillGreyQuinternary": "#9aa0a5"
 }

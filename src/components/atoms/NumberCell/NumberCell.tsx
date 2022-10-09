@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { NumberCellProps } from './NumberCell.types';
+import * as S from './NumberCell.styles';
 
 const NumberCell = <T extends object>(props: NumberCellProps<T>): JSX.Element => {
   const {
@@ -21,7 +22,7 @@ const NumberCell = <T extends object>(props: NumberCellProps<T>): JSX.Element =>
     setValue(initialValue);
   }, [initialValue]);
 
-  return <input type="number" value={value} onChange={handleChange} onBlur={handleBlur} />;
+  return <S.Input type="number" value={value} onChange={handleChange} onBlur={handleBlur} />;
 };
 
 export default NumberCell;
