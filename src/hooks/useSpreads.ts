@@ -1,21 +1,12 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { useQuery } from 'react-query';
 
+import { Endpoints } from '../config/endpoints';
 import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
-import { fetchSpreadConfigurations, updateSpreadConfiguration, deleteSpreadConfiguration } from '../services/spreadService';
+import { deleteSpreadConfiguration, fetchSpreadConfigurations, updateSpreadConfiguration } from '../services/spreadService';
 
 const useSpreads = () => {
   const [spreadConfigurations, setSpreadConfigurations] = useState<SpreadConfiguration[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (spreadConfigurations.length) return;
-
-      const response = await fetchSpreadConfigurations();
-      setSpreadConfigurations(response.data);
-    };
-
-    fetchData().catch(console.error);
-  }, []);
 
   const workingHours = useMemo(
     () => spreadConfigurations.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS),
@@ -26,28 +17,42 @@ const useSpreads = () => {
     [spreadConfigurations]
   );
 
-  const updateSpreadConfigurations = useCallback((rowIndex: number, columnId: string, value: unknown) => {
-    setSpreadConfigurations((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
-  }, []);
+  const { refetch: refetchSpreadConfigurations } = useQuery([Endpoints.SPREADS], fetchSpreadConfigurations, {
+    onSuccess: (response) => {
+      setSpreadConfigurations(response.data);
+    },
+  });
 
-  const updateSpreadConfigurationById = useCallback(async (spreadConfiguration: SpreadConfiguration) => {
-    const response = await updateSpreadConfiguration(spreadConfiguration);
+  const updateSpreadConfigurations = useCallback(
+    (rowIndex: number, columnId: string, value: unknown) => {
+      setSpreadConfigurations((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
+    },
+    [setSpreadConfigurations]
+  );
 
-    return response.data;
-  }, []);
+  const updateSpreadConfigurationById = useCallback(
+    async (spreadConfiguration: SpreadConfiguration) => {
+      await updateSpreadConfiguration(spreadConfiguration);
 
-  const deleteSpreadConfigurationById = useCallback(async (spreadConfigurationId: number) => {
-    const response = await deleteSpreadConfiguration(spreadConfigurationId);
+      setSpreadConfigurations((rows) => rows.map((row) => (row.id === spreadConfiguration.id ? spreadConfiguration : row)));
+    },
+    [setSpreadConfigurations]
+  );
 
-    setSpreadConfigurations((rows) => rows.filter((row) => row.id !== spreadConfigurationId));
+  const deleteSpreadConfigurationById = useCallback(
+    async (spreadConfigurationId: number) => {
+      await deleteSpreadConfiguration(spreadConfigurationId);
 
-    return response.data;
-  }, []);
+      setSpreadConfigurations((rows) => rows.filter((row) => row.id !== spreadConfigurationId));
+    },
+    [setSpreadConfigurations]
+  );
 
   return {
     spreadConfigurations,
     workingHours,
     nightShift,
+    refetchSpreadConfigurations,
     updateSpreadConfigurations,
     updateSpreadConfigurationById,
     deleteSpreadConfigurationById,

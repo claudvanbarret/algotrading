@@ -14,7 +14,7 @@ export const fetchSpreadConfigurations = () => {
  */
 export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfiguration) => {
   const endpoint = `${Endpoints.SPREADS}/${spreadConfiguration.id}`;
-  return RequestService.put<SpreadConfiguration[]>(endpoint, spreadConfiguration);
+  return RequestService.put<SpreadConfiguration>(endpoint, spreadConfiguration);
 };
 
 /**
@@ -22,5 +22,5 @@ export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfigurati
  */
 export const deleteSpreadConfiguration = (spreadConfigurationId: number, config?: RequestConfig) => {
   const endpoint = `${Endpoints.SPREADS}/${spreadConfigurationId}`;
-  return RequestService.delete<SpreadConfiguration[]>(endpoint, config);
+  return RequestService.delete<SpreadConfiguration>(endpoint, config);
 };
