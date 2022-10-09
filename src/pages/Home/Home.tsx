@@ -8,47 +8,39 @@ import { Side } from '../../components/atoms/Side';
 import { Table } from '../../components/molecules/Table';
 import useSpreads from '../../hooks/useSpreads';
 import { useToggle } from '../../hooks/useToggle';
-import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
+import { Spread, Spreadcessor } from '../../models/Spread';
 import { FormSpread } from '../../shared/FormSpread';
 import * as S from './Home.styles';
 
 const Home = () => {
   const { t } = useTranslation();
-  const {
-    workingHours,
-    nightShift,
-    refetchSpreadConfigurations,
-    updateSpreadConfigurations,
-    createSpread,
-    updateSpreadConfigurationById,
-    deleteSpreadConfigurationById,
-  } = useSpreads();
+  const { workingHours, nightShift, refetchSpreads, updateSpreads, createSpread, updateSpread, deleteSpread } = useSpreads();
   const [isOpenFormSpread, openFormSpread, closeFormSpread] = useToggle();
 
   const handleEdit = useCallback(
-    (row: Row<SpreadConfiguration>) => {
-      const payload: SpreadConfiguration = {
+    (row: Row<Spread>) => {
+      const payload: Spread = {
         ...row.original,
-        notionalFrom: row.values[SpreadConfigurationAcessor.NOTIONAL_FROM],
-        notionalTo: row.values[SpreadConfigurationAcessor.NOTIONAL_TO],
-        spreadPercentil: row.values[SpreadConfigurationAcessor.SPREAD_PERCENTIL],
+        notionalFrom: row.values[Spreadcessor.NOTIONAL_FROM],
+        notionalTo: row.values[Spreadcessor.NOTIONAL_TO],
+        spreadPercentil: row.values[Spreadcessor.SPREAD_PERCENTIL],
       };
 
-      updateSpreadConfigurationById(payload);
+      updateSpread(payload);
     },
-    [updateSpreadConfigurationById]
+    [updateSpread]
   );
 
   const handleDelete = useCallback(
-    (row: Row<SpreadConfiguration>) => {
-      const spreadConfigurationId = row.original.id;
+    (row: Row<Spread>) => {
+      const spreadId = row.original.id;
 
-      deleteSpreadConfigurationById(spreadConfigurationId);
+      deleteSpread(spreadId);
     },
-    [deleteSpreadConfigurationById]
+    [deleteSpread]
   );
 
-  const handleSubmit = (spread: SpreadConfiguration) => {
+  const handleSubmit = (spread: Spread) => {
     createSpread(spread);
     closeFormSpread();
   };
@@ -57,47 +49,47 @@ const Home = () => {
     () => [
       {
         Header: t('account_id'),
-        accessor: SpreadConfigurationAcessor.ACCOUNT_ID,
+        accessor: Spreadcessor.ACCOUNT_ID,
         width: 120,
       },
       {
         Header: t('symbol'),
-        accessor: SpreadConfigurationAcessor.SYMBOL,
+        accessor: Spreadcessor.SYMBOL,
         width: 100,
       },
       {
         Header: t('side'),
-        accessor: SpreadConfigurationAcessor.SIDE,
+        accessor: Spreadcessor.SIDE,
         width: 100,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <Side type={props.row.original.side} />,
+        Cell: (props: CellProps<Spread, number>) => <Side type={props.row.original.side} />,
       },
       {
         Header: t('notional_from'),
-        accessor: SpreadConfigurationAcessor.NOTIONAL_FROM,
+        accessor: Spreadcessor.NOTIONAL_FROM,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
+        Cell: (props: CellProps<Spread, number>) => <NumberCell {...props} onBlur={updateSpreads} />,
       },
       {
         Header: t('notional_to'),
-        accessor: SpreadConfigurationAcessor.NOTIONAL_TO,
+        accessor: Spreadcessor.NOTIONAL_TO,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
+        Cell: (props: CellProps<Spread, number>) => <NumberCell {...props} onBlur={updateSpreads} />,
       },
       {
         Header: t('percent'),
-        accessor: SpreadConfigurationAcessor.SPREAD_PERCENTIL,
+        accessor: Spreadcessor.SPREAD_PERCENTIL,
         width: 160,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <NumberCell {...props} onBlur={updateSpreadConfigurations} />,
+        Cell: (props: CellProps<Spread, number>) => <NumberCell {...props} onBlur={updateSpreads} />,
       },
       {
         Header: t('edit'),
         width: 75,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <button onClick={() => handleEdit(props.row)}>Edit</button>,
+        Cell: (props: CellProps<Spread, number>) => <button onClick={() => handleEdit(props.row)}>Edit</button>,
       },
       {
         Header: t('delete'),
         width: 75,
-        Cell: (props: CellProps<SpreadConfiguration, number>) => <button onClick={() => handleDelete(props.row)}>Delete</button>,
+        Cell: (props: CellProps<Spread, number>) => <button onClick={() => handleDelete(props.row)}>Delete</button>,
       },
     ],
     []
@@ -107,7 +99,7 @@ const Home = () => {
     <S.Container>
       <S.Title>{t('spread_configuration')}</S.Title>
       <S.Buttons>
-        <Button variant="secondary" onClick={() => refetchSpreadConfigurations()}>
+        <Button variant="secondary" onClick={() => refetchSpreads()}>
           {t('refresh_spread_values')}
         </Button>
         <Button variant="primary" onClick={() => openFormSpread()}>
@@ -115,8 +107,8 @@ const Home = () => {
         </Button>
       </S.Buttons>
       <FormSpread open={isOpenFormSpread} onSubmit={handleSubmit} onClose={() => closeFormSpread()} />
-      <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={360} title={t('working_hours')} />
-      <Table columns={columns as Column<SpreadConfiguration>[]} data={nightShift} height={360} title={t('night_shift')} />
+      <Table columns={columns as Column<Spread>[]} data={workingHours} height={360} title={t('working_hours')} />
+      <Table columns={columns as Column<Spread>[]} data={nightShift} height={360} title={t('night_shift')} />
     </S.Container>
   );
 };

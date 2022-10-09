@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { Endpoints } from '../config/endpoints';
-import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
+import { Spread, SpreadType } from '../models/Spread';
 import {
   createSpreadConfiguration,
   deleteSpreadConfiguration,
@@ -11,68 +11,62 @@ import {
 } from '../services/spreadService';
 
 const useSpreads = () => {
-  const [spreadConfigurations, setSpreadConfigurations] = useState<SpreadConfiguration[]>([]);
+  const [spreads, setSpreads] = useState<Spread[]>([]);
 
-  const workingHours = useMemo(
-    () => spreadConfigurations.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS),
-    [spreadConfigurations]
-  );
-  const nightShift = useMemo(
-    () => spreadConfigurations.filter((spread) => spread.spreadTypeId === SpreadType.NIGHT_SHIFT),
-    [spreadConfigurations]
-  );
+  const workingHours = useMemo(() => spreads.filter((spread) => spread.spreadTypeId === SpreadType.WORKING_HOURS), [spreads]);
+  const nightShift = useMemo(() => spreads.filter((spread) => spread.spreadTypeId === SpreadType.NIGHT_SHIFT), [spreads]);
 
-  const { refetch: refetchSpreadConfigurations } = useQuery([Endpoints.SPREADS], fetchSpreadConfigurations, {
+  const { refetch: refetchSpreads } = useQuery([Endpoints.SPREADS], fetchSpreadConfigurations, {
     onSuccess: (response) => {
-      setSpreadConfigurations(response.data);
+      setSpreads(response.data);
     },
   });
 
-  const updateSpreadConfigurations = useCallback(
+  const updateSpreads = useCallback(
     (rowIndex: number, columnId: string, value: unknown) => {
-      setSpreadConfigurations((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
+      setSpreads((rows) => rows.map((row, index) => (index === rowIndex ? { ...row, [columnId]: value } : row)));
     },
-    [setSpreadConfigurations]
+    [setSpreads]
   );
 
   const createSpread = useCallback(
-    async (spread: SpreadConfiguration) => {
+    async (spread: Spread) => {
       const response = await createSpreadConfiguration(spread);
 
-      const rows = [response.data, ...spreadConfigurations];
+      const rows = [response.data, ...spreads];
 
-      setSpreadConfigurations(rows);
+      setSpreads(rows);
     },
-    [setSpreadConfigurations, spreadConfigurations]
+    [setSpreads, spreads]
   );
 
-  const updateSpreadConfigurationById = useCallback(
-    async (spreadConfiguration: SpreadConfiguration) => {
-      await updateSpreadConfiguration(spreadConfiguration);
+  const updateSpread = useCallback(
+    async (spread: Spread) => {
+      await updateSpreadConfiguration(spread);
 
-      setSpreadConfigurations((rows) => rows.map((row) => (row.id === spreadConfiguration.id ? spreadConfiguration : row)));
+      setSpreads((rows) => rows.map((row) => (row.id === spread.id ? spread : row)));
     },
-    [setSpreadConfigurations]
+    [setSpreads]
   );
 
-  const deleteSpreadConfigurationById = useCallback(
-    async (spreadConfigurationId: number) => {
-      await deleteSpreadConfiguration(spreadConfigurationId);
+  const deleteSpread = useCallback(
+    async (spreadId: number) => {
+      await deleteSpreadConfiguration(spreadId);
 
-      setSpreadConfigurations((rows) => rows.filter((row) => row.id !== spreadConfigurationId));
+      setSpreads((rows) => rows.filter((row) => row.id !== spreadId));
     },
-    [setSpreadConfigurations]
+    [setSpreads]
   );
 
   return {
-    spreadConfigurations,
+    spreads,
     workingHours,
     nightShift,
+    refetchSpreads,
+    updateSpreads,
     createSpread,
-    refetchSpreadConfigurations,
-    updateSpreadConfigurations,
-    updateSpreadConfigurationById,
-    deleteSpreadConfigurationById,
+    updateSpread,
+    deleteSpread,
   };
 };
 

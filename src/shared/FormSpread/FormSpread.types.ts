@@ -1,9 +1,9 @@
-import { SpreadConfiguration } from '../../models/SpreadConfiguration';
+import { Spread } from '../../models/Spread';
 
 export interface FormSpreadProps {
   open?: boolean;
-  onSubmit: (spreadConfiguration: SpreadConfiguration) => void;
+  onSubmit: (spread: Spread) => void;
   onClose?: () => void;
 }
 
-export type FormSpreadValues = Partial<SpreadConfiguration>;
+export type SpreadFormValues = Partial<Spread>;

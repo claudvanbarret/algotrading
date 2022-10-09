@@ -13,7 +13,7 @@ export enum SpreadType {
   NIGHT_SHIFT,
 }
 
-export interface SpreadConfiguration {
+export interface Spread {
   id: number;
   spreadTypeId: SpreadType;
   accountId: number;
@@ -24,7 +24,7 @@ export interface SpreadConfiguration {
   spreadPercentil: number;
 }
 
-export enum SpreadConfigurationAcessor {
+export enum Spreadcessor {
   ACCOUNT_ID = 'accountId',
   SPREAD_TYPE = 'spreadTypeId',
   SYMBOL = 'symbol',

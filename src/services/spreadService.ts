@@ -1,27 +1,27 @@
 import { Endpoints } from '../config/endpoints';
-import { SpreadConfiguration } from '../models/SpreadConfiguration';
+import { Spread } from '../models/Spread';
 import RequestService, { RequestConfig } from './RequestService';
 
 /**
  * Fetch and returns spread configurations
  */
 export const fetchSpreadConfigurations = () => {
-  return RequestService.get<SpreadConfiguration[]>(Endpoints.SPREADS);
+  return RequestService.get<Spread[]>(Endpoints.SPREADS);
 };
 
 /**
  * Create spread configuration
  */
-export const createSpreadConfiguration = (spread: SpreadConfiguration) => {
-  return RequestService.post<SpreadConfiguration>(Endpoints.SPREADS, spread);
+export const createSpreadConfiguration = (spread: Spread) => {
+  return RequestService.post<Spread>(Endpoints.SPREADS, spread);
 };
 
 /**
  * Update spread configurations
  */
-export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfiguration) => {
+export const updateSpreadConfiguration = (spreadConfiguration: Spread) => {
   const endpoint = `${Endpoints.SPREADS}/${spreadConfiguration.id}`;
-  return RequestService.put<SpreadConfiguration>(endpoint, spreadConfiguration);
+  return RequestService.put<Spread>(endpoint, spreadConfiguration);
 };
 
 /**
@@ -29,5 +29,5 @@ export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfigurati
  */
 export const deleteSpreadConfiguration = (spreadConfigurationId: number, config?: RequestConfig) => {
   const endpoint = `${Endpoints.SPREADS}/${spreadConfigurationId}`;
-  return RequestService.delete<SpreadConfiguration>(endpoint, config);
+  return RequestService.delete<Spread>(endpoint, config);
 };

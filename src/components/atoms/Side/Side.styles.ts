@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Side } from '../../../models/SpreadConfiguration';
+import { Side } from '../../../models/Spread';
 import Theme from '../../../theme/Theme';
 import { SideProps } from './Side.types';
 
