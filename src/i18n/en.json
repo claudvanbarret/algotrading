@@ -1,6 +1,8 @@
 {
     "algotrading": "Algotrading",
     "spread_configuration": "Spread Configuration",
+    "refresh_spread_values": "Refresh Spread Values",
+    "add_range": "Add Range",
     "working_hours": "Working Hours",
     "account_id": "AccountId",
     "symbol": "Symbol",

@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CellProps, Column, Row } from 'react-table';
+import { Button } from '../../components/atoms/Button';
 
 import { NumberCell } from '../../components/atoms/NumberCell';
 import { Side } from '../../components/atoms/Side';
@@ -10,7 +11,13 @@ import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/Sp
 import * as S from './Home.styles';
 
 const Home = () => {
-  const { workingHours, updateSpreadConfigurations, updateSpreadConfigurationById, deleteSpreadConfigurationById } = useSpreads();
+  const {
+    workingHours,
+    refetchSpreadConfigurations,
+    updateSpreadConfigurations,
+    updateSpreadConfigurationById,
+    deleteSpreadConfigurationById,
+  } = useSpreads();
   const { t } = useTranslation();
 
   const handleEdit = useCallback(
@@ -88,8 +95,14 @@ const Home = () => {
 
   return (
     <S.Container>
-      <h1>{t('spread_configuration')}</h1>
-      <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={300} title={t('working_hours')} />
+      <S.Title>{t('spread_configuration')}</S.Title>
+      <S.Buttons>
+        <Button variant="secondary" onClick={() => refetchSpreadConfigurations()}>
+          {t('refresh_spread_values')}
+        </Button>
+        <Button variant="primary">{t('add_range')}</Button>
+      </S.Buttons>
+      <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={360} title={t('working_hours')} />
     </S.Container>
   );
 };
