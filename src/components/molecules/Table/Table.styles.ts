@@ -12,7 +12,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h3`
-  padding: ${spaces.s};
+  padding: ${spaces.sp};
   background-color: ${colors.fillGrey};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -24,11 +24,23 @@ export const Table = styled.table<TableStyleProps>`
   display: inline-block;
   border-spacing: 0;
   border: 1px solid ${colors.fillGrey};
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   overflow-y: auto;
   height: ${({ height }) => `${height}px` ?? '100%'};
+
+  tbody {
+    tr {
+      background-color: ${colors.fillGreySecondary};
+
+      :nth-child(2n) {
+        background-color: ${colors.fillGreyTertiary};
+      }
+    }
+  }
 `;
 
-export const Tr = styled.td`
+export const Tr = styled.tr`
   :last-child {
     .td {
       border-bottom: 0;
@@ -38,9 +50,7 @@ export const Tr = styled.td`
 
 const Column = css`
   margin: 0;
-  padding: ${spaces.xs};
-  border-bottom: 1px solid ${colors.fillGrey};
-  border-right: 1px solid ${colors.fillGrey};
+
   text-align: left;
 
   :last-child {
@@ -50,8 +60,12 @@ const Column = css`
 
 export const Th = styled.th`
   ${Column}
+  background-color: ${colors.fillBlack};
+  padding: ${spaces.sp};
+  font-weight: ${fonts.weight.light};
 `;
 
 export const Td = styled.td`
   ${Column}
+  padding: ${spaces.s} ${spaces.sp};
 `;

@@ -40,14 +40,17 @@ const Home = () => {
       {
         Header: t('account_id'),
         accessor: SpreadConfigurationAcessor.ACCOUNT_ID,
+        width: 120,
       },
       {
         Header: t('symbol'),
         accessor: SpreadConfigurationAcessor.SYMBOL,
+        width: 100,
       },
       {
         Header: t('side'),
         accessor: SpreadConfigurationAcessor.SIDE,
+        width: 100,
       },
       {
         Header: t('notional_from'),
