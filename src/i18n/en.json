@@ -15,5 +15,7 @@
     "spread_percentil": "Spread Percentil",
     "edit": "Edit",
     "delete": "Delete",
-    "select": "Select"
+    "select": "Select",
+    "add_spread": "Add Spread",
+    "add_new_spread_range": "Add new spread range"
 }
