@@ -16,6 +16,7 @@ const Home = () => {
   const { t } = useTranslation();
   const {
     workingHours,
+    nightShift,
     refetchSpreadConfigurations,
     updateSpreadConfigurations,
     createSpread,
@@ -113,10 +114,9 @@ const Home = () => {
           {t('add_range')}
         </Button>
       </S.Buttons>
-
       <FormSpread open={isOpenFormSpread} onSubmit={handleSubmit} onClose={() => closeFormSpread()} />
-
       <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={360} title={t('working_hours')} />
+      <Table columns={columns as Column<SpreadConfiguration>[]} data={nightShift} height={360} title={t('night_shift')} />
     </S.Container>
   );
 };

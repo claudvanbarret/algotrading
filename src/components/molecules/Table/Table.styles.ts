@@ -21,13 +21,14 @@ export const Title = styled.h3`
 `;
 
 export const Table = styled.table<TableStyleProps>`
+  height: ${({ height }) => `${height}px` ?? '100%'};
+  margin-bottom: ${spaces.sp};
   display: inline-block;
   border-spacing: 0;
   border: 1px solid ${colors.fillGrey};
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   overflow-y: auto;
-  height: ${({ height }) => `${height}px` ?? '100%'};
 
   tbody {
     tr {
