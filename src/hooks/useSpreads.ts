@@ -3,7 +3,12 @@ import { useQuery } from 'react-query';
 
 import { Endpoints } from '../config/endpoints';
 import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
-import { deleteSpreadConfiguration, fetchSpreadConfigurations, updateSpreadConfiguration } from '../services/spreadService';
+import {
+  createSpreadConfiguration,
+  deleteSpreadConfiguration,
+  fetchSpreadConfigurations,
+  updateSpreadConfiguration,
+} from '../services/spreadService';
 
 const useSpreads = () => {
   const [spreadConfigurations, setSpreadConfigurations] = useState<SpreadConfiguration[]>([]);
@@ -30,6 +35,17 @@ const useSpreads = () => {
     [setSpreadConfigurations]
   );
 
+  const createSpread = useCallback(
+    async (spread: SpreadConfiguration) => {
+      const response = await createSpreadConfiguration(spread);
+
+      const rows = [response.data, ...spreadConfigurations];
+
+      setSpreadConfigurations(rows);
+    },
+    [setSpreadConfigurations, spreadConfigurations]
+  );
+
   const updateSpreadConfigurationById = useCallback(
     async (spreadConfiguration: SpreadConfiguration) => {
       await updateSpreadConfiguration(spreadConfiguration);
@@ -52,6 +68,7 @@ const useSpreads = () => {
     spreadConfigurations,
     workingHours,
     nightShift,
+    createSpread,
     refetchSpreadConfigurations,
     updateSpreadConfigurations,
     updateSpreadConfigurationById,

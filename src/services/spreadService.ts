@@ -10,6 +10,13 @@ export const fetchSpreadConfigurations = () => {
 };
 
 /**
+ * Create spread configuration
+ */
+export const createSpreadConfiguration = (spread: SpreadConfiguration) => {
+  return RequestService.post<SpreadConfiguration>(Endpoints.SPREADS, spread);
+};
+
+/**
  * Update spread configurations
  */
 export const updateSpreadConfiguration = (spreadConfiguration: SpreadConfiguration) => {
