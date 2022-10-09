@@ -8,7 +8,7 @@ import useSpreads from '../../hooks/useSpreads';
 import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
 
 const Home = () => {
-  const { workingHours, updateSpreadConfigurations, updateSpreadConfigurationById } = useSpreads();
+  const { workingHours, updateSpreadConfigurations, updateSpreadConfigurationById, deleteSpreadConfigurationById } = useSpreads();
   const { t } = useTranslation();
 
   const handleEdit = useCallback(
@@ -23,6 +23,15 @@ const Home = () => {
       updateSpreadConfigurationById(payload);
     },
     [updateSpreadConfigurationById]
+  );
+
+  const handleDelete = useCallback(
+    (row: Row<SpreadConfiguration>) => {
+      const spreadConfigurationId = row.original.id;
+
+      deleteSpreadConfigurationById(spreadConfigurationId);
+    },
+    [deleteSpreadConfigurationById]
   );
 
   const columns = useMemo(
@@ -59,8 +68,13 @@ const Home = () => {
       },
       {
         Header: t('edit'),
-        width: 100,
+        width: 75,
         Cell: (props: CellProps<SpreadConfiguration, number>) => <button onClick={() => handleEdit(props.row)}>Edit</button>,
+      },
+      {
+        Header: t('delete'),
+        width: 75,
+        Cell: (props: CellProps<SpreadConfiguration, number>) => <button onClick={() => handleDelete(props.row)}>Delete</button>,
       },
     ],
     []

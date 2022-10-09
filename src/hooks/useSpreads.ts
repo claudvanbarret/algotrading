@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { SpreadConfiguration, SpreadType } from '../models/SpreadConfiguration';
-import { fetchSpreadConfigurations, updateSpreadConfiguration } from '../services/spreadService';
+import { fetchSpreadConfigurations, updateSpreadConfiguration, deleteSpreadConfiguration } from '../services/spreadService';
 
 const useSpreads = () => {
   const [spreadConfigurations, setSpreadConfigurations] = useState<SpreadConfiguration[]>([]);
@@ -36,12 +36,21 @@ const useSpreads = () => {
     return response.data;
   }, []);
 
+  const deleteSpreadConfigurationById = useCallback(async (spreadConfigurationId: number) => {
+    const response = await deleteSpreadConfiguration(spreadConfigurationId);
+
+    setSpreadConfigurations((rows) => rows.filter((row) => row.id !== spreadConfigurationId));
+
+    return response.data;
+  }, []);
+
   return {
     spreadConfigurations,
     workingHours,
     nightShift,
     updateSpreadConfigurations,
     updateSpreadConfigurationById,
+    deleteSpreadConfigurationById,
   };
 };
 

@@ -6,5 +6,6 @@
     "notional_from": "Notional From",
     "notional_to": "Notional To",
     "percent": "Percent",
-    "edit": "Edit"
+    "edit": "Edit",
+    "delete": "Delete"
 }
