@@ -4,12 +4,16 @@
     "refresh_spread_values": "Refresh Spread Values",
     "add_range": "Add Range",
     "working_hours": "Working Hours",
+    "night_shift": "Night Shift",
     "account_id": "AccountId",
+    "spread_type": "SpreadType",
     "symbol": "Symbol",
     "side": "Side",
     "notional_from": "Notional From",
     "notional_to": "Notional To",
     "percent": "Percent",
+    "spread_percentil": "Spread Percentil",
     "edit": "Edit",
-    "delete": "Delete"
+    "delete": "Delete",
+    "select": "Select"
 }

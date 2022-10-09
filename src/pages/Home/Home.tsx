@@ -1,24 +1,28 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CellProps, Column, Row } from 'react-table';
-import { Button } from '../../components/atoms/Button';
 
+import { Button } from '../../components/atoms/Button';
 import { NumberCell } from '../../components/atoms/NumberCell';
 import { Side } from '../../components/atoms/Side';
 import { Table } from '../../components/molecules/Table';
 import useSpreads from '../../hooks/useSpreads';
+import { useToggle } from '../../hooks/useToggle';
 import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
+import { FormSpread } from '../../shared/FormSpread';
 import * as S from './Home.styles';
 
 const Home = () => {
+  const { t } = useTranslation();
   const {
     workingHours,
     refetchSpreadConfigurations,
     updateSpreadConfigurations,
+    createSpread,
     updateSpreadConfigurationById,
     deleteSpreadConfigurationById,
   } = useSpreads();
-  const { t } = useTranslation();
+  const [isOpenFormSpread, openFormSpread, closeFormSpread] = useToggle();
 
   const handleEdit = useCallback(
     (row: Row<SpreadConfiguration>) => {
@@ -42,6 +46,11 @@ const Home = () => {
     },
     [deleteSpreadConfigurationById]
   );
+
+  const handleSubmit = (spread: SpreadConfiguration) => {
+    createSpread(spread);
+    closeFormSpread();
+  };
 
   const columns = useMemo(
     () => [
@@ -100,8 +109,13 @@ const Home = () => {
         <Button variant="secondary" onClick={() => refetchSpreadConfigurations()}>
           {t('refresh_spread_values')}
         </Button>
-        <Button variant="primary">{t('add_range')}</Button>
+        <Button variant="primary" onClick={() => openFormSpread()}>
+          {t('add_range')}
+        </Button>
       </S.Buttons>
+
+      <FormSpread open={isOpenFormSpread} onSubmit={handleSubmit} onClose={() => closeFormSpread()} />
+
       <Table columns={columns as Column<SpreadConfiguration>[]} data={workingHours} height={360} title={t('working_hours')} />
     </S.Container>
   );
