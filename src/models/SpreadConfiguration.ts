@@ -26,6 +26,7 @@ export interface SpreadConfiguration {
 
 export enum SpreadConfigurationAcessor {
   ACCOUNT_ID = 'accountId',
+  SPREAD_TYPE = 'spreadType',
   SYMBOL = 'symbol',
   SIDE = 'side',
   NOTIONAL_FROM = 'notionalFrom',
