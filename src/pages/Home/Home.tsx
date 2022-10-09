@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { CellProps, Column, Row } from 'react-table';
 
 import { NumberCell } from '../../components/atoms/NumberCell';
+import { Side } from '../../components/atoms/Side';
 import { Table } from '../../components/molecules/Table';
 import useSpreads from '../../hooks/useSpreads';
 import { SpreadConfiguration, SpreadConfigurationAcessor } from '../../models/SpreadConfiguration';
@@ -51,6 +52,7 @@ const Home = () => {
         Header: t('side'),
         accessor: SpreadConfigurationAcessor.SIDE,
         width: 100,
+        Cell: (props: CellProps<SpreadConfiguration, number>) => <Side type={props.row.original.side} />,
       },
       {
         Header: t('notional_from'),
