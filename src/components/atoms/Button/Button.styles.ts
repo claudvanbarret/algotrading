@@ -12,4 +12,5 @@ export const Button = styled.button<ButtonProps>`
   border-radius: 4px;
   color: ${colors.fill};
   text-transform: uppercase;
+  cursor: pointer;
 `;
