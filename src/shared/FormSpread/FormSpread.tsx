@@ -1,6 +1,8 @@
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
+import { Input } from '../../components/atoms/Input';
+import { Select } from '../../components/atoms/Select';
 
 import { Modal } from '../../components/molecules/Modal';
 import { Side, Spread, Spreadcessor, SpreadType } from '../../models/Spread';
@@ -45,21 +47,22 @@ const FormSpread = (props: FormSpreadProps) => {
     <Modal open={open} title={t('add_new_spread_range')} okText={t('add_spread')} onOk={() => submitForm()} onClose={onClose}>
       <S.Form onSubmit={formik.handleSubmit}>
         <S.Label htmlFor={Spreadcessor.SPREAD_TYPE}>{t('spread_type')}</S.Label>
-        <select
+        <Select
           id={Spreadcessor.SPREAD_TYPE}
           name={Spreadcessor.SPREAD_TYPE}
           onChange={formik.handleChange}
           value={formik.values.spreadTypeId}
+          defaultOptionLabel={t('select')}
+          options={[
+            { value: SpreadType.WORKING_HOURS, label: t('working_hours') },
+            { value: SpreadType.NIGHT_SHIFT, label: t('night_shift') },
+          ]}
           required
-        >
-          <option selected>{t('select')}</option>
-          <option value={SpreadType.WORKING_HOURS}>{t('working_hours')}</option>
-          <option value={SpreadType.NIGHT_SHIFT}>{t('night_shift')}</option>
-        </select>
+        />
         {errors.spreadTypeId && touched.spreadTypeId && <S.Error>{errors.spreadTypeId}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.ACCOUNT_ID}>{t('account_id')}</S.Label>
-        <input
+        <Input
           id={Spreadcessor.ACCOUNT_ID}
           name={Spreadcessor.ACCOUNT_ID}
           type="number"
@@ -70,7 +73,7 @@ const FormSpread = (props: FormSpreadProps) => {
         {errors.accountId && touched.accountId && <S.Error>{errors.accountId}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.SYMBOL}>{t('symbol')}</S.Label>
-        <input
+        <Input
           id={Spreadcessor.SYMBOL}
           name={Spreadcessor.SYMBOL}
           type="text"
@@ -81,15 +84,21 @@ const FormSpread = (props: FormSpreadProps) => {
         {errors.symbol && touched.symbol && <S.Error>{errors.symbol}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.SIDE}>{t('side')}</S.Label>
-        <select name={Spreadcessor.SIDE} onChange={formik.handleChange} value={formik.values.side}>
-          <option selected>{t('select')}</option>
-          <option value={Side.BUY}>{Side.BUY}</option>
-          <option value={Side.SELL}>{Side.SELL}</option>
-        </select>
+        <Select
+          id={Spreadcessor.SIDE}
+          name={Spreadcessor.SIDE}
+          onChange={formik.handleChange}
+          value={formik.values.side}
+          defaultOptionLabel={t('select')}
+          options={[
+            { value: Side.BUY, label: Side.BUY },
+            { value: Side.SELL, label: Side.SELL },
+          ]}
+        />
         {errors.side && touched.side && <S.Error>{errors.side}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.NOTIONAL_FROM}>{t('notional_from')}</S.Label>
-        <input
+        <Input
           id={Spreadcessor.NOTIONAL_FROM}
           name={Spreadcessor.NOTIONAL_FROM}
           type="number"
@@ -100,7 +109,7 @@ const FormSpread = (props: FormSpreadProps) => {
         {errors.notionalFrom && touched.notionalFrom && <S.Error>{errors.notionalFrom}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.NOTIONAL_TO}>{t('notional_to')}</S.Label>
-        <input
+        <Input
           id={Spreadcessor.NOTIONAL_TO}
           name={Spreadcessor.NOTIONAL_TO}
           type="number"
@@ -111,7 +120,7 @@ const FormSpread = (props: FormSpreadProps) => {
         {errors.notionalTo && touched.notionalTo && <S.Error>{errors.notionalTo}</S.Error>}
 
         <S.Label htmlFor={Spreadcessor.SPREAD_PERCENTIL}>{t('spread_percentil')}</S.Label>
-        <input
+        <Input
           id={Spreadcessor.SPREAD_PERCENTIL}
           name={Spreadcessor.SPREAD_PERCENTIL}
           type="number"
