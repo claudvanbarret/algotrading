@@ -1,8 +1,11 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import { RiDeleteBinLine } from 'react-icons/ri';
 import { CellProps, Column, Row } from 'react-table';
 
 import { Button } from '../../components/atoms/Button';
+import { IconButton } from '../../components/atoms/IconButton';
 import { NumberCell } from '../../components/atoms/NumberCell';
 import { Side } from '../../components/atoms/Side';
 import { Table } from '../../components/molecules/Table';
@@ -10,7 +13,10 @@ import useSpreads from '../../hooks/useSpreads';
 import { useToggle } from '../../hooks/useToggle';
 import { Spread, Spreadcessor } from '../../models/Spread';
 import { FormSpread } from '../../shared/FormSpread';
+import Theme from '../../theme/Theme';
 import * as S from './Home.styles';
+
+const { colors } = Theme;
 
 const Home = () => {
   const { t } = useTranslation();
@@ -84,12 +90,20 @@ const Home = () => {
       {
         Header: t('edit'),
         width: 75,
-        Cell: (props: CellProps<Spread, number>) => <button onClick={() => handleEdit(props.row)}>Edit</button>,
+        Cell: (props: CellProps<Spread, number>) => (
+          <IconButton onClick={() => handleEdit(props.row)}>
+            <AiFillCheckCircle color={colors.fill} />
+          </IconButton>
+        ),
       },
       {
         Header: t('delete'),
         width: 75,
-        Cell: (props: CellProps<Spread, number>) => <button onClick={() => handleDelete(props.row)}>Delete</button>,
+        Cell: (props: CellProps<Spread, number>) => (
+          <IconButton onClick={() => handleDelete(props.row)}>
+            <RiDeleteBinLine color={colors.fillRed} />
+          </IconButton>
+        ),
       },
     ],
     []
