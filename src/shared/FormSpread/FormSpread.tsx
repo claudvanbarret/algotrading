@@ -29,8 +29,6 @@ const FormSpread = (props: FormSpreadProps) => {
     },
     validationSchema: spreadSchema,
     onSubmit: (values) => {
-      console.log(formik.isValid, { values });
-
       if (!formik.isValid) return;
       const spread = {
         ...values,
