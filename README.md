@@ -2,9 +2,9 @@
 
 ## Requirements
 
-Install [mock-server](https://www.npmjs.com/package/mockserver) to run the server of this project.
+Install [json-server](https://www.npmjs.com/package/json-server) to run the server of this project.
 
-### `npm install -g mockserver`
+### `npm install -g json-server`
 
 ## Available Scripts
 
